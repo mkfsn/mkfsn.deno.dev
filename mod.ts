@@ -1,6 +1,7 @@
-import { serve } from "https://deno.land/x/sift@0.1.6/mod.ts";
+import { serve, serveStatic } from "https://deno.land/x/sift@0.1.6/mod.ts";
+import indexPage from "./pages/index.jsx";
 
 serve({
-  "/": () => new Response("mkfsn.deno.dev", {headers: {"content-type": "text/html; charset=utf-8"}}),
+  "/": indexPage,
   404: () => new Response("Not Found", {headers: {"content-type": "text/html; charset=utf-8"}}),
 });
